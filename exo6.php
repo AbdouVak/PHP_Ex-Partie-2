@@ -6,6 +6,16 @@ de valeurs.</p>
 <h2>Résultat</h2>
 
 <?PHP
+$elements = array("Monsieur","Madame","Mademoiselle");
+function alimenterListeDeroulante($elements){
+    $choix ="";
+    foreach($elements as $titres ){
 
+        $choix = $choix . "<option value='$titres'>$titres</option>";
+    }
+    $select = "<select name='choix'> $choix</select>";
+    return $select;
+};
 
+echo alimenterListeDeroulante($elements);
 ?>

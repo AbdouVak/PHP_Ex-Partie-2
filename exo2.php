@@ -32,7 +32,7 @@ $capitales = array(
     "Italie"=>"Rome"
 );
 
-function afficherTableHTML($capitales){
+function afficherTableHTML($capitales): string{
     ksort($capitales);
     $colonne = "";
 

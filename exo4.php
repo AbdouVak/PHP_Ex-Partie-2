@@ -33,7 +33,7 @@ $capitales = array(
     "Espagne"=>"Madrid"
 );
 
-function afficherTableHTML($capitales){
+function afficherTableHTML($capitales): string{
     ksort($capitales);
     $colonne = "";
 

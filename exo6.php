@@ -7,7 +7,7 @@ de valeurs.</p>
 
 <?PHP
 $elements = array("Monsieur","Madame","Mademoiselle");
-function alimenterListeDeroulante($elements){
+function alimenterListeDeroulante($elements):string{
     $choix ="";
     foreach($elements as $titres ){
 

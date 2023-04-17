@@ -9,7 +9,7 @@ précisant le nom des champs associés.</p>
 $nomsInput = array("Nom","Prénom","Ville");
 function afficherInput($nomsInput){
     foreach($nomsInput as $information){
-        echo "<br>$information</br>";
+        echo "$information<br></br>";
         echo "<input type='text'/> <br></br>";
     }
     

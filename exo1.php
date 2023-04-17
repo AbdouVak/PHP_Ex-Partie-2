@@ -13,7 +13,7 @@ caractère passée en argument en majuscules et en rouge.</p>
 <?PHP
 $texte = "Mon texte en paramètre";
 
-function convertirMajRouge($texte){
+function convertirMajRouge($texte) : string{
     $texte = mb_strtoupper($texte);
     $texte = "<p class = couleur_rouge>$texte</p>";
     return $texte;

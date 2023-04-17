@@ -7,7 +7,8 @@ précisant le nom des champs associés.</p>
 
 <?PHP
 $nomsInput = array("Nom","Prénom","Ville");
-function afficherInput($nomsInput){
+
+function afficherInput(array $nomsInput){
     foreach($nomsInput as $information){
         echo "$information<br></br>";
         echo "<input type='text'/> <br></br>";

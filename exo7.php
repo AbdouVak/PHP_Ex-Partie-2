@@ -13,7 +13,7 @@ $elements = array(
     "choix3" => "choix3"
 );
 
-function genererCheckbox($elements){
+function genererCheckbox(array $elements){
     $checkbox = "";
     foreach($elements as $choix_nom =>$choix){
         echo  "<input type='checkbox' name='$choix' id='case' /> <label for='case'> $choix_nom</label><br>";

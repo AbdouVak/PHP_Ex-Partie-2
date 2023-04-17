@@ -9,7 +9,7 @@ valeurs en paramètre ("Monsieur","Madame","Mademoiselle").</p>
 <?PHP
 $nomsRadio = array("Monsieur","Madame","Mademoiselle");
 
-function afficherRadio($nomsRadio){
+function afficherRadio(array $nomsRadio){
     $checkbox = "";
     foreach($nomsRadio as $titres){
         echo "<input type='radio' name='titre' value='$titres'>$titres<br>";

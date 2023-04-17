@@ -11,7 +11,8 @@ complet qui contient les informations suivantes : champs de texte avec nom, pré
 $information_perso = array("Nom","Prénom","addresse e-mail","Ville","sexe");
 $formation = array("Développeur Logiciel","Designer web","Intégrateur","Chef de projet");
 
-function afficherInput($information_perso,$formation){
+function afficherInput(array $information_perso,array $formation){
+
     foreach($information_perso as $information){
         echo "$information</br>";
         echo "<input type='text'/> <br></br>";

@@ -16,7 +16,7 @@ class Voiture{
     private string $_modele;
     private string $_nbPortes;
     private int $_vitesseActuelle = 0;
-    private string $_voitureAllumer = "eteint";
+    private bool $_is_voitureAllumer = false;
 
     function __construct(string $marque, string $modele,int $nbPortes)
     {
@@ -37,16 +37,16 @@ class Voiture{
 
     public function demarrer(){
         echo "Le véhicule $this->_marque  $this->_modele démarre<br>";
-        $this->_voitureAllumer = "allumer";
+        $this->_is_voitureAllumer = true;
     }
 
     public function accelerer(int $_vitesse){
-        if($this->_voitureAllumer == "eteint"){
-            echo "Le véhicule $this->_marque  $this->_modele veut accélère de $_vitesse km / h <br>";
-            echo "Pour accélerer, il faut demarrer le véhicule  $this->_marque  $this->_modele<br>";
-        }else{
+        if($this->_is_voitureAllumer){
             $this->_vitesseActuelle = strval($this->_vitesseActuelle + $_vitesse);
-            echo "Le véhicule $this->_marque  $this->_modele accélère de $_vitesse km / h <br>";            
+            echo "Le véhicule $this->_marque  $this->_modele accélère de $_vitesse km / h <br>";               
+        }else{
+            echo "Le véhicule $this->_marque  $this->_modele veut accélère de $_vitesse km / h <br>";
+            echo "Pour accélerer, il faut demarrer le véhicule  $this->_marque  $this->_modele<br>";         
         }
     }
 
@@ -54,17 +54,17 @@ class Voiture{
 
     public function stopper(){
         echo "Le véhicule $this->_marque  $this->_modele s'arrete <br>";
-        $this->_voitureAllumer = "eteint";
+        $this->_is_voitureAllumer = false;
         
     }
 
     public function ralentir(int $_vitesse){        
-        if($this->_voitureAllumer == "eteint"){
+        if($this->_is_voitureAllumer){
+            $this->_vitesseActuelle = $this->_vitesseActuelle - $_vitesse;
+            echo "Le véhicule $this->_marque  $this->_modele déccélère de $_vitesse km / h <br>";            
+        }else{
             echo "Le véhicule $this->_marque  $this->_modele veut déccélère de $_vitesse km / h <br>";
             echo "Pour déccélèrer, il faut demarrer le véhicule  $this->_marque  $this->_modele<br>";
-        }else{
-            $this->_vitesseActuelle = $this->_vitesseActuelle - $_vitesse;
-            echo "Le véhicule $this->_marque  $this->_modele déccélère de $_vitesse km / h <br>";
         }
     }
 
@@ -74,7 +74,12 @@ class Voiture{
         echo "****************************<br>";
         echo "Nom de modèle du véhicule: $this->_marque  $this->_modele<br>";
         echo "Nombre de portes: $this->_nbPortes<br>";
-        echo "le véhicule $this->_marque est $this->_voitureAllumer <br>";
+        if($this->_is_voitureAllumer){
+            echo "le véhicule $this->_marque est allumer <br>";
+        }else{
+            echo "le véhicule $this->_marque est eteinte <br>";
+        }
+        
         echo "Sa vitesse actuelle est de $this->_vitesseActuelle<br>";
     }
 

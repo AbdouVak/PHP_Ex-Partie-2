@@ -55,6 +55,7 @@ class Voiture{
     public function stopper(){
         echo "Le véhicule $this->_marque  $this->_modele s'arrete <br>";
         $this->_is_voitureAllumer = false;
+        $this->_vitesseActuelle = 0;
         
     }
 
